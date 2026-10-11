@@ -5,8 +5,7 @@ enum Categorie {
   entrees('Entrées'),
   plats('Plats'),
   desserts('Desserts'),
-  boissons('Boissons'),
-  tshirts('T-shirts');
+  boissons('Boissons');
 
   const Categorie(this.label);
   final String label;

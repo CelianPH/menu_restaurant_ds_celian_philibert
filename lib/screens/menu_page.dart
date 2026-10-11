@@ -19,6 +19,9 @@ class _MenuPageState extends State<MenuPage> {
         .where((plat) => plat.categorie == categorieSelectionnee)
         .toList();
 
+    final Size taille = MediaQuery.of(context).size;
+    final bool estPaysage = taille.width > taille.height;
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('Menu du Restaurant DS Célian'),
@@ -34,7 +37,19 @@ class _MenuPageState extends State<MenuPage> {
             },
           ),
           Expanded(
-            child: ListView.builder(
+            child: estPaysage
+            ? GridView.builder(
+                padding: const EdgeInsets.all(8),
+                itemCount: platsFiltres.length,
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,   // 2 colonnes
+                  mainAxisExtent: 130, // hauteur fixe de chaque case (= hauteur d'une carte)
+                ),
+                itemBuilder: (context, index) {
+                  return PlatCard(plat: platsFiltres[index]);
+                },
+              )
+            :ListView.builder(
               padding: const EdgeInsets.symmetric(vertical: 8),
               itemCount: platsFiltres.length,
               itemBuilder: (context, index) {
