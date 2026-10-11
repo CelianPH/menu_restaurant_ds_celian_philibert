@@ -1,17 +1,29 @@
 # menu_restaurant_ds_celian_philibert
 
-A new Flutter project.
+Application mobile Flutter qui affiche le menu d'un restaurant.
 
-## Getting Started
+## Aperçu
+Screenshot
+[Mode portrait](docs/screenshot.png) | 
+[Mode paysage](docs/screenshot-paysage.png)
 
-This project is a starting point for a Flutter application.
+Vidéo
+[Voir la vidéo de démonstration](docs/demo.mp4)
 
-A few resources to get you started if this is your first Flutter project:
+## 🗂️ Structure du projet
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+```
+lib/
+├── main.dart                  → point d'entrée, MaterialApp
+├── models/plat.dart           → classe Plat et enum Categorie
+├── data/menu_data.dart        → données du menu (codées en dur)
+├── widgets/plat_card.dart     → carte réutilisable d'un plat
+├── widgets/categorie_bar.dart → barre de catégories
+└── screens/menu_page.dart     → écran principal et logique de sélection
+assets/images/                 → images des plats
+docs/                          → captures d'écran et vidéo
+```
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## 👤 Auteur
+
+[Célian Philibert] – [M2 IW], [ESGI]
